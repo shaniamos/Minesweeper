@@ -100,17 +100,3 @@ function hideAfterHint(cellI, cellJ) {
     console.log('gGame.shownCount:', gGame.shownCount)
 }
 
-
-// function neighborsIsShown(cellI , cellJ ){
-//     for (var i = cellI - 1; i <= cellI + 1; i++) {
-//         if (i < 0 || i >= gBoard.length) continue;
-
-//         for (var j = cellJ - 1; j <= cellJ + 1; j++) {
-//             if (i === cellI && j === cellJ) continue;
-//             if (j < 0 || j >= gBoard[i].length) continue;
-//             if (gBoard[i][j].isShown) return true
-//         }
-//     }
-//     return false
-// }
-

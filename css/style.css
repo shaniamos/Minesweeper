@@ -1,16 +1,25 @@
 .app{
     width: 600px;
-    height: 900px;
+    height: 850px;
     background-color: gray;
-    padding: 20px;
+    padding: 10px;
     margin: auto;
     text-align: center;
     color: azure;
 }
+h1{
+    font-size: 25px;
+}
+h2{
+    font-size: 15px;
+}
+h3{
+    font-size: 15px;
+    text-align: center;
+}
 
 button{
     margin: auto;
-    margin: 10px;
 }
 
 .beginner{
@@ -25,7 +34,6 @@ button{
 
 .board  {
     margin: auto;
-    margin-top: 20px;
 }
 
 .board td {
@@ -69,5 +77,8 @@ p{
 }
 .hints span{
     cursor: help;
+}
+.game-emoji{
+    margin-top: 5px;
 }
 
