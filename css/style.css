@@ -1,0 +1,73 @@
+.app{
+    width: 600px;
+    height: 900px;
+    background-color: gray;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    color: azure;
+}
+
+button{
+    margin: auto;
+    margin: 10px;
+}
+
+.beginner{
+    background-color: rgb(36, 150, 36);
+}
+.medium{
+    background-color: rgb(77, 77, 209);
+}
+.expert{
+    background-color: rgb(237, 68, 68);
+}
+
+.board  {
+    margin: auto;
+    margin-top: 20px;
+}
+
+.board td {
+    width: 25px;
+    height: 25px;
+}
+
+
+.shown{
+    background-color: rgb(65, 63, 63);
+}
+
+.around-count0 {
+    color: rgb(65, 63, 63);
+}
+
+.around-count1 {
+    color: blue
+}
+
+.around-count2 {
+    color: green
+}
+
+.around-count3 {
+    color: red
+}
+
+.around-count4 {
+    color: black;
+}
+
+.around-count5 {
+    color: seashell;
+}
+p{
+    text-align: start;
+}
+.lives span{
+    cursor: no-drop;
+}
+.hints span{
+    cursor: help;
+}
+
