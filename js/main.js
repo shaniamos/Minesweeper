@@ -6,6 +6,7 @@ const MINE = '💣'
 const MINE_BOMB = '💥'
 const FLAG = '🚩'
 
+const INIT_HINT = '❓'
 const USED_HINT = '❔'
 
 var gBoard //The model: A Matrix containing cell objects
@@ -44,7 +45,7 @@ function initGame(size = 4) {
     renderEmoji(NORMAL)
     renderTimer()
     initLives()
-    // initHints()
+    initHints()
 }
 
 function createBoard() {
@@ -95,7 +96,7 @@ function hintClicked(elHint, hintNum) {
     if (!currHint.isGiven) {
         cellClickedForHint = true
         currHint.isGiven = true
-        renderHint(hintNum)
+        renderHint(hintNum , USED_HINT)
     }
     console.log('hint number', hintNum)
 }
@@ -125,11 +126,20 @@ function initLives() {
     //Expert   - 30 MINES 3 LIVES
     gLives = getLivesCount()
     var elLives = document.querySelector('.lives');
-    var strHTML = 'lives:'
+    var strHTML = 'LIVES:'
     for (var i = 1; i <= gLives; i++) {
         strHTML += `<span class="live-${i}">🙉</span>`
     }
     elLives.innerHTML = strHTML
+}
+
+function initHints(){
+    var elHints = document.querySelector('.hints');
+    var strHTML = 'HINTS:'
+    for (var i = 1; i <= gLevel.HINTS; i++) {
+        strHTML += `<span class="hint-${i}" onclick="hintClicked(this , ${i})">${INIT_HINT}</span>`
+    }
+    elHints.innerHTML = strHTML
 }
 
 function buildBoard() {
@@ -256,7 +266,6 @@ function updateShownCounter(currCell) {
     if (!currCell.isShown) {
         currCell.isShown = true
         gGame.shownCount++
-        console.log('Shown Added! currCounter:', gGame.shownCount)
     }
 }
 
@@ -410,8 +419,8 @@ function renderEmoji(emoji) {
     elEmoji.innerHTML = emoji
 }
 
-function renderHint(hintNum) {
+function renderHint(hintNum , sign) {
     var elHint = document.querySelector(`.hint-${hintNum}`)
-    elHint.innerHTML = USED_HINT
+    elHint.innerHTML = sign
 }
 
